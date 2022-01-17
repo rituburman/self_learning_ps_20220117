@@ -1,0 +1,61 @@
+//calc with switch case and exception handling implementation
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		
+		String s1 = getInput("Enter val1: ");
+		String s2 = getInput("Enter val2: "); 
+		String op = input("Choose the operation you want to perform (+,-,*,/) ");
+		
+		float ans = 0.0;
+		
+		try {
+		switch(op){
+		    case "+": ans = add(s1, s2);
+		    break;
+		    case "-": ans = subtract(s1, s2);
+		    break;
+		    case "*": ans = multiply(s1, s2);
+		    break;
+		    case "/": ans = divide(s1, s2);
+		    break;
+		    default : System.out.println("Invalid operator!");
+		    return;
+		    }
+		    System.out.println("The answer is "+ans);
+		    
+		} catch(Exception e) {
+		System.out.println("Invalid operand!" + e.getMessage());
+		}
+	
+		}
+		
+		private static float add(String val1, String val2) {
+		   float val1 =  Float.parseFloat(s1);
+		   float val2 =  Float.parseFloat(s2);
+		   return val1 + val2;
+		}
+		private static float subtract(String val1, String val2) {
+		   float val1 =  Float.parseFloat(s1);
+		   float val2 =  Float.parseFloat(s2);
+		   return val1 - val2;
+		}
+		private static float multiply(String val1, String val2) {
+		   float val1 =  Float.parseFloat(s1);
+		   float val2 =  Float.parseFloat(s2);
+		   return val1 * val2;
+		}
+		private static float divide(String val1, String val2) {
+		   float val1 =  Float.parseFloat(s1);
+		   float val2 =  Float.parseFloat(s2);
+		   return  val1 / val2;
+		}
+		private static String getInput() {
+		   System.out.print(prompt);
+		   Scanner sc = new Scanner(System.in);
+		   return sc.nextLine();
+		    
+		}
+		
+	}
